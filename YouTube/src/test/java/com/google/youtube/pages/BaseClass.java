@@ -1,13 +1,13 @@
 package com.google.youtube.pages;
 
-import java.io.InputStream;
 import java.net.URL;
-import java.util.Properties;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+import com.google.youtube.utils.MobileProperties;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -21,42 +21,36 @@ public class BaseClass extends AbstractTestNGCucumberTests {
     private static WebDriverWait wait;
 
 
-	@BeforeTest 
+	@BeforeMethod
 	public void setUp() {
 
-		//Load the properties file 
-		Properties prop = new Properties(); 
 		try {
-			InputStream inputStream =
-					getClass().getClassLoader().getResourceAsStream("android.properties");
-			prop.load(inputStream);
-	
-			DesiredCapabilities caps = new DesiredCapabilities();
-	
-			caps.setCapability(MobileCapabilityType.PLATFORM_NAME, prop.get("platform.name")); 
-			// caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, prop.get("platform.version"));
-			caps.setCapability(MobileCapabilityType.DEVICE_NAME, prop.get("device.name")); 
-			// caps.setCapability(MobileCapabilityType.UDID,prop.get("device.udid"));
-			caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, prop.get("new.command.timeout")); 
-			// caps.setCapability(MobileCapabilityType.APP, prop.get("application.path"));
-			caps.setCapability(MobileCapabilityType.NO_RESET, prop.get("no.reset"));
-			caps.setCapability("appPackage", prop.get("application.package"));
-			caps.setCapability("appActivity", prop.get("application.activity")); 
-			// caps.setCapability(MobileCapabilityType.BROWSER_NAME,prop.get("browser.name") );
-	
-			URL url = new URL((String) prop.get("remote.url"));
-	
-			driver = new AppiumDriver<MobileElement>(url, caps);
-	
-			//This time out is set because test can be run on slow Android SDK emulator
-//	        PageFactory.initElements(new AppiumFieldDecorator(driver, ofSeconds(5)), this);
-			wait = new WebDriverWait(driver, 20);
+			DesiredCapabilities cap = new DesiredCapabilities();
 
+			cap.setCapability(MobileCapabilityType.PLATFORM_NAME, MobileProperties.PLATFORM_NAME ); 
+			cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, MobileProperties.PLATFORM_VERSION);
+			cap.setCapability(MobileCapabilityType.DEVICE_NAME, MobileProperties.DEVICE_NAME); 
+			cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, MobileProperties.NEW_COMMAND_TIMEOUT); 
+			cap.setCapability(MobileCapabilityType.NO_RESET, MobileProperties.NO_RESET);
 			
-		}catch(Exception e) { 
-			System.out.println("Cause is: " + e.getCause());
-			System.out.println("Message: " + e.getMessage()); e.printStackTrace(); 
-		} 
+			if(MobileProperties.PLATFORM_NAME.contains("Android")) {
+			//	cap.setCapability(MobileCapabilityType.APP, MobileProperties.APPLICATION_PATH);
+				cap.setCapability("appPackage", MobileProperties.APPLICATION_PACKAGE);
+				cap.setCapability("appActivity",MobileProperties.APPLICATION_ACTIVITY); 
+			//	cap.setCapability(MobileCapabilityType.BROWSER_NAME,MobileProperties.BROWSER_NAME );
+			} else { // iOS
+				//caps.setCapability(MobileCapabilityType.UUID, MobileProperties.);
+				
+			}
+
+			URL url = new URL((String) MobileProperties.REMOTE_URL);
+	
+			driver = new AppiumDriver<MobileElement>(url, cap);
+			wait = new WebDriverWait(driver, 20);
+		} catch (Exception ex) {
+			
+		}
+			
 	}
 
 	
@@ -69,9 +63,8 @@ public class BaseClass extends AbstractTestNGCucumberTests {
     }
 
     
-	@AfterTest 
-	public void teardown() {
-		driver.close(); 
+	@AfterMethod
+	public void tearDown() {
 		driver.quit(); 
 	}
 

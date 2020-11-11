@@ -5,9 +5,9 @@
     <classes>
       <class name="com.google.youtube.runner.YouTubeRunner">
         <methods>
-          <include name="teardown"/>
+          <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario" invocation-numbers="1"/>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>

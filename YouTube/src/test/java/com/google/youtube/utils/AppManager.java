@@ -57,7 +57,8 @@ public class AppManager {
 
     private void buildDriver() throws MalformedURLException {
         CapabilityBuilder capabilityBuilder = new CapabilityBuilder();
-        DesiredCapabilities capabilities = capabilityBuilder.build(platform);
+//        DesiredCapabilities capabilities = capabilityBuilder.build(platform);
+        DesiredCapabilities capabilities = capabilityBuilder.build();
 
         if (capabilities.getPlatform().is(Platform.IOS)) {
             driver = new IOSDriver<MobileElement>(new URL("http://127.0.0.1:" + appiumServer.getPort() + "/wd/hub"),

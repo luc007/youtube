@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,6 +19,7 @@ import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class BasePage {
@@ -26,6 +28,7 @@ public class BasePage {
     protected WebDriverWait wait;
     protected AppiumDriver<MobileElement> driver;
     protected List<MobileElement> elements = new ArrayList<MobileElement>();
+
 
     public BasePage(AppiumDriver<MobileElement> driver, WebDriverWait wait) {
         this.driver = driver;
@@ -37,6 +40,7 @@ public class BasePage {
         elements.add(e);
     }
 
+    
     // Click on element method
     public void clickOnElement(MobileElement el) {
         wait.until(ExpectedConditions.visibilityOf(el)).click();
@@ -44,7 +48,11 @@ public class BasePage {
 
    
     public void setText(MobileElement el, String text) {
-        wait.until(ExpectedConditions.visibilityOf(el)).sendKeys(text);;
+        wait.until(ExpectedConditions.visibilityOf(el));
+        el.click();
+        el.clear();
+        el.sendKeys(text);
+        logger.info("Text is set to : " + el.getText() );
     }
     
     
@@ -81,9 +89,30 @@ public class BasePage {
         return wait.until(ExpectedConditions.visibilityOf(el)).getText();
     }
 
+    public int[] getElementCoOrdinates(MobileElement el) {
+        Point location = el.getLocation();
+        int x = location.getX();
+        int y = location.getY();
+
+        return new int[] {x, y};
+    }
+
+    public void clickCoordinates(int[] coOrdinates) {
+    	try {
+    		TouchAction touchAction = new TouchAction(driver);
+
+    		touchAction.tap(PointOption.point(coOrdinates[0], coOrdinates[1])).waitAction(WaitOptions.waitOptions(Duration.ofMillis(200))).perform();
+    	} catch(Exception ex) {
+    		throw new RuntimeException(ex);
+    	}
+    }
+    
+  
+    
     public void swipeOrScroll(Direction direction) {
+    	TouchAction touchAction = new TouchAction(driver);
+
         Dimension size = driver.manage().window().getSize();
-        TouchAction action = new TouchAction(driver);
         PointOption p1 = new PointOption();
         int startY = 0;
         int startX = 0;
@@ -94,28 +123,28 @@ public class BasePage {
                 startY = size.height / 2;
                 startX = (int) (size.width * 0.90);
                 endX = (int) (size.width * 0.05);
-                action.press(PointOption.point(startX, startY)).moveTo(PointOption.point(endX, startY)).release().perform();
+                touchAction.press(PointOption.point(startX, startY)).moveTo(PointOption.point(endX, startY)).release().perform();
                 System.out.println("\n Successfully swiped right! \n");
                 break;
             case LEFT:
                 startY = size.height / 2;
                 startX = (int) (size.width * 0.05);
                 endX = (int) (size.width * 0.90);
-                action.press(PointOption.point(startX, startY)).moveTo(PointOption.point(endX, startY)).release().perform();
+                touchAction.press(PointOption.point(startX, startY)).moveTo(PointOption.point(endX, startY)).release().perform();
                 System.out.println("\n Successfully swiped left! \n");
                 break;
             case UP:
                 endY = (int) (size.height * 0.9);
                 startY = (int) (size.height * 0.55);
                 startX = size.width / 2;
-                action.longPress(PointOption.point(startX, startY)).moveTo(PointOption.point(startX, endY)).release().perform();
+                touchAction.longPress(PointOption.point(startX, startY)).moveTo(PointOption.point(startX, endY)).release().perform();
                 System.out.println("\n Successfully scrolled up \n");
                 break;
             case DOWN:
                 startY = (int) (size.height * 0.90);
                 endY = (int) (size.height * 0.30);
                 startX = (size.width / 2);
-                action.longPress(PointOption.point(startX, startY)).moveTo(PointOption.point(startX, endY)).release().perform();
+                touchAction.longPress(PointOption.point(startX, startY)).moveTo(PointOption.point(startX, endY)).release().perform();
                 System.out.println("\n Successfully scrolled down! \n");
                 break;
         }

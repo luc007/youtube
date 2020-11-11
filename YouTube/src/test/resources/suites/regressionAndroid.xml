@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite for running tests" parallel="tests" thread-count="3">
+	
     <test name="Android Regression Tests">
-        <parameter name="platform" value="AndroidmobileDevice"/>
+      <!--   <parameter name="platform" value="AndroidmobileDevice"/>  -->
         <classes>
             <class name="com.google.youtube.runner.YouTubeRunner"/>
         </classes>
