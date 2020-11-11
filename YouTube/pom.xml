@@ -14,6 +14,7 @@
 		<cucumber.version>4.8.1</cucumber.version>
 		<rest-assured.version>4.1.2</rest-assured.version>
 		<cucumberJVMParallelPluginVersion>5.0.0</cucumberJVMParallelPluginVersion>
+		<java.version>10</java.version>
 	</properties>
 
 	<build>
@@ -23,22 +24,26 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven.compiler.version}</version>
 				<configuration>
-					<encoding>utf-8</encoding>
+					<encoding>UTF-8</encoding>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
 				<configuration>
-					<properties>
+					<suiteXmlFiles>
+						<suiteXmlFile>src/test/resources/suites/testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+ 					<properties>
 						<property>
 							<name>dataproviderthreadcount</name>
-							<value>${threadcount}</value>
+							<value>3</value>
 						</property>
 					</properties>
-				</configuration>
+ 				</configuration>
 			</plugin>
 		</plugins>
 		<resources>

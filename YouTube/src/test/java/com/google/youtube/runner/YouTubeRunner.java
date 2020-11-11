@@ -9,10 +9,11 @@ import io.cucumber.testng.CucumberOptions;
 		plugin = { "pretty", "json:target/reports/youtube.json", "html:target/reports/youtube"},
 		monochrome = true, 
 		features = "src/test/resources/features/YouTubeDemo.feature", 
+		tags = "@YouTubeDemo",
 		dryRun = false,  
 		glue = "com.google.youtube.steps")
 
-public class YouTubeRunner extends BaseClass	{
+public class YouTubeRunner extends BaseClass{
 	
 }
 

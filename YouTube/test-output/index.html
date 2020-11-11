@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Mung.Thai\AppData\Local\Temp\testng-eclipse-731719952\testng-customsuite.xml</span>
+                    <span>C:\Users\Mung.Thai\AppData\Local\Temp\testng-eclipse--94357086\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -145,14 +145,14 @@
                   </a> <!-- runScenario("Youtube search and save to playlist", "Optional[YouTube Demo]") -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("Youtube search and save to playlist", "Optional[YouTube Demo]")</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.id: com.google.android.youtube:id/button (tried for 20 second(s) with 500 milliseconds interval)
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.xpath: //android.widget.TextView[@content-desc=&apos;Save to playlist&apos;] (tried for 20 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at com.google.youtube.pages.BasePage.clickOnElement(BasePage.java:46)
-	at com.google.youtube.pages.YouTubePage.saveToPlaylist(YouTubePage.java:112)
+	at com.google.youtube.pages.YouTubePage.saveToPlaylist(YouTubePage.java:111)
 	at com.google.youtube.steps.YouTubeSteps.theUserSearchAndSaveToPlaylist(YouTubeSteps.java:32)
-	at ✽.the user search &quot;minions 2015 memorable moments&quot; and save &quot;Minions 2015&quot; to playlist(file:///C:/projects/youtubeDemo/YouTube/src/test/resources/features/YouTubeDemo.feature:13)
-Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.id: com.google.android.youtube:id/button
+	at ✽.the user search &quot;minions 2015 memorable moments&quot; and save &quot;Minions 2015&quot; to playlist(file:///C:/projects/youtubeDemo/YouTube/src/test/resources/features/YouTubeDemo.feature:14)
+Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.xpath: //android.widget.TextView[@content-desc=&apos;Save to playlist&apos;]
 	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
 	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
 	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
@@ -162,7 +162,7 @@ Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an elem
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	at com.google.youtube.pages.BasePage.clickOnElement(BasePage.java:46)
-	at com.google.youtube.pages.YouTubePage.saveToPlaylist(YouTubePage.java:112)
+	at com.google.youtube.pages.YouTubePage.saveToPlaylist(YouTubePage.java:111)
 	at com.google.youtube.steps.YouTubeSteps.theUserSearchAndSaveToPlaylist(YouTubeSteps.java:32)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -212,7 +212,7 @@ Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an elem
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@4391a2d8 (tried for 10 second(s) with 500 milliseconds interval)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@6c8fe7a4 (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
@@ -224,8 +224,8 @@ Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, tim
 System info: host: &apos;CPX-6Q66GL2UREG&apos;, ip: &apos;10.215.1.248&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.9&apos;
 Driver info: io.appium.java_client.AppiumDriver
 Capabilities {appActivity: com.google.android.youtube...., appPackage: com.google.android.youtube, databaseEnabled: false, desired: {appActivity: com.google.android.youtube...., appPackage: com.google.android.youtube, deviceName: Android Emulator, newCommandTimeout: 300, noReset: false, platformName: android, platformVersion: 9.0}, deviceApiLevel: 28, deviceManufacturer: Google, deviceModel: AOSP on IA Emulator, deviceName: emulator-5554, deviceScreenDensity: 440, deviceScreenSize: 1080x2160, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 300, noReset: false, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 9, statBarHeight: 66, takesScreenshot: true, viewportRect: {height: 1962, left: 0, top: 66, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: a115a311-39d7-426e-82f9-07973a9e620d
-*** Element info: {Using=id, value=com.google.android.youtube:id/button}
+Session ID: 335b01eb-85a2-422b-9228-3032a3c8994a
+*** Element info: {Using=xpath, value=//android.widget.TextView[@content-desc=&apos;Save to playlist&apos;]}
 	at jdk.internal.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
@@ -240,10 +240,10 @@ Session ID: a115a311-39d7-426e-82f9-07973a9e620d
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:69)
-	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
@@ -285,7 +285,7 @@ Session ID: a115a311-39d7-426e-82f9-07973a9e620d
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Mung.Thai\AppData\Local\Temp\testng-eclipse-731719952\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Mung.Thai\AppData\Local\Temp\testng-eclipse--94357086\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -346,16 +346,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'com.google.youtube.runner.YouTubeRunner')
-data.setCell(0, 3, 34292);
+data.setCell(0, 3, 31921);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
 data.setCell(1, 2, 'com.google.youtube.runner.YouTubeRunner')
-data.setCell(1, 3, 17182);
+data.setCell(1, 3, 15823);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 51 seconds</span>
+              <span class="suite-total-time">Total running time: 47 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -388,33 +388,33 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">450 ms</span>
+                <span class="method-start">493 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Youtube search and play Minios movie", "Optional[YouTube Demo]")</span>
-                <span class="method-start">23871 ms</span>
+                <span class="method-start">23641 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">41056 ms</span>
+                <span class="method-start">39467 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">43272 ms</span>
+                <span class="method-start">41955 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runScenario("Youtube search and save to playlist", "Optional[YouTube Demo]")</span>
-                <span class="method-start">65167 ms</span>
+                <span class="method-start">64535 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">99463 ms</span>
+                <span class="method-start">96459 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">102056 ms</span>
+                <span class="method-start">98738 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

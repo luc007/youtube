@@ -9,18 +9,18 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">102,217</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">98,858</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.google.youtube.runner.YouTubeRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1605106724486</td><td rowspan="1">34292</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.google.youtube.runner.YouTubeRunner</td><td><a href="#m1">runScenario</a></td><td rowspan="1">1605106683190</td><td rowspan="1">17182</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.google.youtube.runner.YouTubeRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1605110581802</td><td rowspan="1">31921</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.google.youtube.runner.YouTubeRunner</td><td><a href="#m1">runScenario</a></td><td rowspan="1">1605110540908</td><td rowspan="1">15823</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.google.youtube.runner.YouTubeRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Youtube search and save to playlist&quot;</td><td>&quot;Optional[YouTube Demo]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.id: com.google.android.youtube:id/button (tried for 20 second(s) with 500 milliseconds interval)
+<h2>Default test</h2><h3 id="m0">com.google.youtube.runner.YouTubeRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Youtube search and save to playlist&quot;</td><td>&quot;Optional[YouTube Demo]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.xpath: //android.widget.TextView[@content-desc=&apos;Save to playlist&apos;] (tried for 20 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at com.google.youtube.pages.BasePage.clickOnElement(BasePage.java:46)
-	at com.google.youtube.pages.YouTubePage.saveToPlaylist(YouTubePage.java:112)
+	at com.google.youtube.pages.YouTubePage.saveToPlaylist(YouTubePage.java:111)
 	at com.google.youtube.steps.YouTubeSteps.theUserSearchAndSaveToPlaylist(YouTubeSteps.java:32)
-	at ✽.the user search &quot;minions 2015 memorable moments&quot; and save &quot;Minions 2015&quot; to playlist(file:///C:/projects/youtubeDemo/YouTube/src/test/resources/features/YouTubeDemo.feature:13)
-Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.id: com.google.android.youtube:id/button
+	at ✽.the user search &quot;minions 2015 memorable moments&quot; and save &quot;Minions 2015&quot; to playlist(file:///C:/projects/youtubeDemo/YouTube/src/test/resources/features/YouTubeDemo.feature:14)
+Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.xpath: //android.widget.TextView[@content-desc=&apos;Save to playlist&apos;]
 	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
 	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
 	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
@@ -30,7 +30,7 @@ Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an elem
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	at com.google.youtube.pages.BasePage.clickOnElement(BasePage.java:46)
-	at com.google.youtube.pages.YouTubePage.saveToPlaylist(YouTubePage.java:112)
+	at com.google.youtube.pages.YouTubePage.saveToPlaylist(YouTubePage.java:111)
 	at com.google.youtube.steps.YouTubeSteps.theUserSearchAndSaveToPlaylist(YouTubeSteps.java:32)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -80,7 +80,7 @@ Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an elem
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@4391a2d8 (tried for 10 second(s) with 500 milliseconds interval)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@6c8fe7a4 (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
@@ -92,8 +92,8 @@ Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, tim
 System info: host: &apos;CPX-6Q66GL2UREG&apos;, ip: &apos;10.215.1.248&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.9&apos;
 Driver info: io.appium.java_client.AppiumDriver
 Capabilities {appActivity: com.google.android.youtube...., appPackage: com.google.android.youtube, databaseEnabled: false, desired: {appActivity: com.google.android.youtube...., appPackage: com.google.android.youtube, deviceName: Android Emulator, newCommandTimeout: 300, noReset: false, platformName: android, platformVersion: 9.0}, deviceApiLevel: 28, deviceManufacturer: Google, deviceModel: AOSP on IA Emulator, deviceName: emulator-5554, deviceScreenDensity: 440, deviceScreenSize: 1080x2160, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 300, noReset: false, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 9, statBarHeight: 66, takesScreenshot: true, viewportRect: {height: 1962, left: 0, top: 66, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: a115a311-39d7-426e-82f9-07973a9e620d
-*** Element info: {Using=id, value=com.google.android.youtube:id/button}
+Session ID: 335b01eb-85a2-422b-9228-3032a3c8994a
+*** Element info: {Using=xpath, value=//android.widget.TextView[@content-desc=&apos;Save to playlist&apos;]}
 	at jdk.internal.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
@@ -108,10 +108,10 @@ Session ID: a115a311-39d7-426e-82f9-07973a9e620d
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:69)
-	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)

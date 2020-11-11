@@ -21,7 +21,7 @@ public class BaseClass extends AbstractTestNGCucumberTests {
     private static WebDriverWait wait;
 
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void setUp() {
 
 		try {
@@ -63,7 +63,7 @@ public class BaseClass extends AbstractTestNGCucumberTests {
     }
 
     
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
 		driver.quit(); 
 	}

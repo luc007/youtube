@@ -1,5 +1,6 @@
 #Author: mung.thai@accenture.com
 
+@YouTubeDemo
 Feature: YouTube Demo
 
 	Background: Open Youtube application
