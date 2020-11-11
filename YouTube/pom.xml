@@ -10,11 +10,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.version>3.8.1</maven.compiler.version>
 		<maven.surefire.version>3.0.0-M5</maven.surefire.version>
-		<maven-cucumber-reporting>4.9.0</maven-cucumber-reporting>
-		<cucumber.version>4.8.1</cucumber.version>
-		<rest-assured.version>4.1.2</rest-assured.version>
-		<cucumberJVMParallelPluginVersion>5.0.0</cucumberJVMParallelPluginVersion>
-		<java.version>10</java.version>
+		<io.cucumber.version>6.8.2</io.cucumber.version>
+		<selenium.version>3.141.59</selenium.version>
+		<testng.version>7.3.0</testng.version>
+		<io.appium.version>7.3.0</io.appium.version>
+		<log4j.version>2.14.0</log4j.version>
+		<java.version>11</java.version>
 	</properties>
 
 	<build>
@@ -32,11 +33,15 @@
 			<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
+                <version>${maven.surefire.version}</version>
 				<configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/suites/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<!-- 
+					<parallel>method</parallel>
+					<useUnlimitedThreads>true</useUnlimitedThreads>
+					 -->
  					<properties>
 						<property>
 							<name>dataproviderthreadcount</name>
@@ -46,8 +51,8 @@
  				</configuration>
 			</plugin>
 		</plugins>
+		<!--  
 		<resources>
-			<!-- regular resource processsing for everything except logback.xml -->
 			<resource>
 				<directory>${basedir}/src/test/resources/features</directory>
 				<includes>
@@ -55,73 +60,69 @@
 				</includes>
 			</resource>
 		</resources>
-
+-->
 	</build>
 	<dependencies>
 		<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
-			<version>7.3.0</version>
+			<version>${io.appium.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.141.59</version>
+			<version>${selenium.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.3.0</version>
+			<version>${testng.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>6.8.2</version>
+			<version>${io.cucumber.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-testng</artifactId>
-			<version>6.8.2</version>
+			<version>${io.cucumber.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-picocontainer</artifactId>
-			<version>6.8.2</version>
+			<version>${io.cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-core</artifactId>
-			<version>6.8.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.yaml</groupId>
-			<artifactId>snakeyaml</artifactId>
-			<version>1.27</version>
+			<version>${io.cucumber.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-jvm</artifactId>
-			<version>6.8.2</version>
+			<version>${io.cucumber.version}</version>
 			<type>pom</type>
 		</dependency>
-		<dependency>
+		
+<!--  		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>gherkin</artifactId>
 			<version>15.0.2</version>
 		</dependency>
+ -->		
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-			<version>2.14.0</version>
+			<version>${log4j.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.14.0</version>
+			<version>${log4j.version}</version>
 		</dependency>
 
 	</dependencies>
