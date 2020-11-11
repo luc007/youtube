@@ -1,1 +1,8 @@
 /.metadata/
+/target/
+/test-output/
+/output/
+/out/
+/.idea/
+/Screenshots/
+*.iml
