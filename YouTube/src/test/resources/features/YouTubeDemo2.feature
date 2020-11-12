@@ -7,7 +7,7 @@ Feature: YouTube Demo
    	Given the user opens a Youtube application
 	    
   Scenario: Youtube search and play Minios movie
-     When the user search "minions 2015 memorable moments" and play
+     When the user search "Minions Mini Movie 2019" and play
      Then Youtube video is playing
      
 #  Scenario: Youtube search and save to playlist

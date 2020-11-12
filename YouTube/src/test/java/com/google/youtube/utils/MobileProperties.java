@@ -38,14 +38,14 @@ public class MobileProperties {
     public static final String PLATFORM_VERSION = getProp().getProperty("platform.version");
     public static final String DEVICE_NAME = getProp().getProperty("device.name");
     public static final String DEVICE_UDID = getProp().getProperty("platform.name");
+    public static final String DEVICE_ORIENTATION = getProp().getProperty("device.orientation");
     public static final String NO_RESET = getProp().getProperty("no.reset");
-    public static final String AUTOMATION_INSTRUMENTATION = getProp().getProperty("automation.instrumentation");
+    public static final String AUTOMATION_NAME = getProp().getProperty("automation.name");
     public static final String APPLICATION_PATH = getProp().getProperty("application.path");
     public static final String APPLICATION_PACKAGE = getProp().getProperty("application.package");
     public static final String APPLICATION_ACTIVITY = getProp().getProperty("application.activity");
     public static final String NEW_COMMAND_TIMEOUT = getProp().getProperty("new.command.timeout");
     public static final String DEVICE_READY_TIMEOUT = getProp().getProperty("device.ready.timeout");
     public static final String BROWSER_NAME = getProp().getProperty("browser.name");
-    public static final String REMOTE_URL = getProp().getProperty("remote.url");
- 
+    public static final String APPIUM_SERVER_URL = getProp().getProperty("remote.url");
 }

@@ -38,14 +38,14 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/suites/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
-					<!-- 
-					<parallel>method</parallel>
+					 
+					<parallel>classes</parallel>
 					<useUnlimitedThreads>true</useUnlimitedThreads>
-					 -->
+					 
  					<properties>
 						<property>
 							<name>dataproviderthreadcount</name>
-							<value>3</value>
+							<value>20</value>
 						</property>
 					</properties>
  				</configuration>

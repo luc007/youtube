@@ -25,10 +25,12 @@ public class YouTubePage extends BasePage {
 	@FindBy(id = "com.google.android.youtube:id/text")
 	private MobileElement searchSelected;
 
-	@FindBy(xpath = "(//android.widget.ImageView[@content-desc=' '])[1]")
-	private MobileElement firstVideo;
 
-	@FindBy(xpath = "//android.widget.FrameLayout[@content-desc='Video player']/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.View")
+	@FindBy(xpath = "//android.view.ViewGroup[contains(@content-desc,'Minions 2015 - Memorable Moments')]")
+	private MobileElement miniosVideo;
+
+	
+	@FindBy(xpath = "//android.widget.FrameLayout[contains(@content-desc,'Video player')]")
 	private MobileElement videoPlayer;
 
 	
@@ -89,17 +91,8 @@ public class YouTubePage extends BasePage {
     }
     
     public void videoPlay() {
-    	clickOnElement(firstVideo);
+    	clickOnElement(miniosVideo);
     	clickOnElement(videoPlayer);
-
-		/*
-		 * clickOnElement(firstVideo); 
-		 * clickOnElement(videoPlayer);
-		 * 
-		 * clickOnElement(videoPlayer); 
-		 * int[] coord = {1026, 138};
-		 * clickCoordinates(coord);
-		 */  	
     }
     
     public boolean isVideoPlaying() {
@@ -114,8 +107,5 @@ public class YouTubePage extends BasePage {
     	clickOnElement(playlistCreateButton);
     }
     
-    public void getPlaylistTitles() {
-    	int i = getPlaylistTitle.size();
- //   	for(int ind 
-    }
+
 }
