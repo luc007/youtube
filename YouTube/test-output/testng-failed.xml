@@ -6,7 +6,7 @@
     <parameter name="platform" value="Android 10.0"/>
     <parameter name="systemPort" value="8201"/>
     <classes>
-      <class name="com.google.youtube.runner.YouTubeRunner">
+      <class name="com.google.youtube.runner.SanityRunner">
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
@@ -14,7 +14,7 @@
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>
-      </class> <!-- com.google.youtube.runner.YouTubeRunner -->
+      </class> <!-- com.google.youtube.runner.SanityRunner -->
     </classes>
   </test> <!-- Android native app test on Android 10(failed) -->
 </suite> <!-- Failed suite [Suite for running tests] -->

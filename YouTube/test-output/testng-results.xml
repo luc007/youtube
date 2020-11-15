@@ -5,16 +5,16 @@
   <suite started-at="2020-11-11T19:24:25 EST" name="Suite for running tests" finished-at="2020-11-11T19:25:21 EST" duration-ms="55658">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.google.youtube.runner.YouTubeRunner@fba92d3]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.google.youtube.runner.SanityRunner@fba92d3]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
     <test started-at="2020-11-11T19:24:25 EST" name="Android native app test on Android 10" finished-at="2020-11-11T19:25:21 EST" duration-ms="55658">
-      <class name="com.google.youtube.runner.YouTubeRunner">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.google.youtube.runner.YouTubeRunner@fba92d3]" started-at="2020-11-11T19:24:25 EST" name="setUpClass" finished-at="2020-11-11T19:24:26 EST" duration-ms="585" status="PASS">
+      <class name="com.google.youtube.runner.SanityRunner">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.google.youtube.runner.SanityRunner@fba92d3]" started-at="2020-11-11T19:24:25 EST" name="setUpClass" finished-at="2020-11-11T19:24:26 EST" duration-ms="585" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="setup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.google.youtube.runner.YouTubeRunner@fba92d3]" started-at="2020-11-11T19:24:26 EST" name="setup" finished-at="2020-11-11T19:24:51 EST" duration-ms="24836" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.google.youtube.runner.SanityRunner@fba92d3]" started-at="2020-11-11T19:24:26 EST" name="setup" finished-at="2020-11-11T19:24:51 EST" duration-ms="24836" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -35,7 +35,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.google.youtube.runner.YouTubeRunner@fba92d3]" started-at="2020-11-11T19:24:51 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-11-11T19:25:19 EST" duration-ms="27887" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.google.youtube.runner.SanityRunner@fba92d3]" started-at="2020-11-11T19:24:51 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-11-11T19:25:19 EST" duration-ms="27887" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -158,15 +158,15 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.google.youtube.runner.YouTubeRunner@fba92d3]" started-at="2020-11-11T19:25:19 EST" name="tearDown" finished-at="2020-11-11T19:25:21 EST" duration-ms="2137" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.google.youtube.runner.SanityRunner@fba92d3]" started-at="2020-11-11T19:25:19 EST" name="tearDown" finished-at="2020-11-11T19:25:21 EST" duration-ms="2137" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.google.youtube.runner.YouTubeRunner@fba92d3]" started-at="2020-11-11T19:25:21 EST" name="tearDownClass" finished-at="2020-11-11T19:25:21 EST" duration-ms="160" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.google.youtube.runner.SanityRunner@fba92d3]" started-at="2020-11-11T19:25:21 EST" name="tearDownClass" finished-at="2020-11-11T19:25:21 EST" duration-ms="160" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- com.google.youtube.runner.YouTubeRunner -->
+      </class> <!-- com.google.youtube.runner.SanityRunner -->
     </test> <!-- Android native app test on Android 10 -->
   </suite> <!-- Suite for running tests -->
 </testng-results>
