@@ -36,7 +36,16 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven.surefire.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
+					<forkCount>3</forkCount>
+					<reuseForks>true</reuseForks>
 					<properties>
 						<property>
 							<name>dataproviderthreadcount</name>
@@ -44,6 +53,7 @@
 						</property>
 					</properties>
 					<parallel>classes</parallel>
+					<threadCount>20</threadCount>
 					<perCoreThreadCount>true</perCoreThreadCount>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/suites/${suiteXmlFile}</suiteXmlFile>

@@ -3,15 +3,13 @@ package com.google.youtube.pages;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import com.google.youtube.utils.ScreenShot;
+import io.cucumber.java8.Status;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import com.google.youtube.utils.MobileProperties;
 
@@ -19,13 +17,12 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 
-public class BaseClass extends AbstractTestNGCucumberTests {
+@Listeners({ScreenShot.class })
+public class BaseTest extends AbstractTestNGCucumberTests {
 
-	private static Logger logger = LogManager.getLogger(BaseClass.class);
+	private static Logger logger = LogManager.getLogger(BaseTest.class);
 
 	public static AppiumDriver<MobileElement> driver;
 	private static WebDriverWait wait;
@@ -62,6 +59,7 @@ public class BaseClass extends AbstractTestNGCucumberTests {
 		wait = new WebDriverWait(driver, 20);
 
 		System.setProperty("cucumber.filter.tags", tags);
+	//	logger.log("Capabilities Configured Successfully");
 	}
 
 /*

@@ -1,7 +1,7 @@
 package com.google.youtube.runner;
 
 
-import com.google.youtube.pages.BaseClass;
+import com.google.youtube.pages.BaseTest;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
@@ -16,7 +16,7 @@ import io.cucumber.testng.CucumberOptions;
 		dryRun = false
 )
 
-public class SanityRunner extends BaseClass{
+public class SanityRunner extends BaseTest {
 
 }
 

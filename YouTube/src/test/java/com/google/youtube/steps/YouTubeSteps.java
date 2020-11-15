@@ -1,8 +1,8 @@
 package com.google.youtube.steps;
 
+import com.google.youtube.pages.BaseTest;
 import org.testng.Assert;
 
-import com.google.youtube.pages.BaseClass;
 import com.google.youtube.pages.YouTubePage;
 
 import io.cucumber.java.en.Given;
@@ -11,7 +11,7 @@ import io.cucumber.java.en.When;
 
 public class YouTubeSteps {
 
-	private YouTubePage youtubePage = new YouTubePage(BaseClass.getDriver(), BaseClass.getWait());
+	private YouTubePage youtubePage = new YouTubePage(BaseTest.getDriver(), BaseTest.getWait());
 
 	@Given("the user opens a Youtube application")
 	public void theUserOpensAYouTubeApplication() {

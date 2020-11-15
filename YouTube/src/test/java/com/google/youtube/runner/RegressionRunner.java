@@ -1,7 +1,6 @@
 package com.google.youtube.runner;
 
-import org.junit.runner.RunWith;
-import com.google.youtube.pages.BaseClass;
+import com.google.youtube.pages.BaseTest;
 import io.cucumber.testng.CucumberOptions;
 
 
@@ -17,7 +16,7 @@ import io.cucumber.testng.CucumberOptions;
         dryRun = false
 )
 
-public class RegressionRunner extends BaseClass{
+public class RegressionRunner extends BaseTest {
 
 }
 
