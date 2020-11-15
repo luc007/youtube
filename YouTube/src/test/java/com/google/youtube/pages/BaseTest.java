@@ -34,7 +34,7 @@ public class BaseTest extends AbstractTestNGCucumberTests {
 	}
 
 
-	@BeforeTest(alwaysRun = true)
+	@BeforeClass(alwaysRun = true)
 	@Parameters({"platform", "udid", "systemPort", "tags"})
 	public void createDriverOptions(String platform, String udid, String systemPort, String tags)  throws Exception{
 		logger.info("Starting ... ");
@@ -79,7 +79,7 @@ public class BaseTest extends AbstractTestNGCucumberTests {
 
 
 
-	@AfterMethod(alwaysRun = true)
+	@AfterClass(alwaysRun = true)
 	public void tearDown() throws Exception{
 		logger.info("Closing YouTube");
 		if(driver != null) {
