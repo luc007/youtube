@@ -1,5 +1,6 @@
 package com.google.youtube.pages;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -36,7 +37,7 @@ public class BaseTest extends AbstractTestNGCucumberTests {
 
 	@BeforeClass(alwaysRun = true)
 	@Parameters({"platform", "udid", "systemPort", "tags"})
-	public void createDriverOptions(String platform, String udid, String systemPort, String tags)  throws Exception{
+	public void createDriverOptions(String platform, String udid, String systemPort, String tags)  throws Exception {
 		logger.info("Starting ... ");
 
 		String[] platformInfo = platform.split(" ");
@@ -55,19 +56,13 @@ public class BaseTest extends AbstractTestNGCucumberTests {
 
 		URL url = new URL(MobileProperties.APPIUM_SERVER_URL);
 		driver = new AppiumDriver<MobileElement>(url, capabilities);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		wait = new WebDriverWait(driver, 20);
+		driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+		wait = new WebDriverWait(driver, 200);
 
 		System.setProperty("cucumber.filter.tags", tags);
-	//	logger.log("Capabilities Configured Successfully");
+		logger.info("Capabilities Configured Successfully");
 	}
 
-/*
-	@Before
-	public void setup(Scenario scenario) {
-		logger.info("Running scenario: " + scenario.getName());
-	}
-*/
 
 	public static AppiumDriver<MobileElement> getDriver() {
 		return driver;
@@ -76,7 +71,6 @@ public class BaseTest extends AbstractTestNGCucumberTests {
 	public static WebDriverWait getWait() {
 		return wait;
 	}
-
 
 
 	@AfterClass(alwaysRun = true)

@@ -28,7 +28,7 @@ public class YouTubePage extends BasePage {
 	@AndroidFindBy(id = "com.google.android.youtube:id/text")
 	private MobileElement searchSelected;
 
-	@AndroidFindBy(xpath = "//android.view.ViewGroup[contains(@content-desc,'Minions')]")
+	@AndroidFindBy(xpath = "//android.view.ViewGroup[contains(translate(@content-desc,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'minions mini')]")
 	private MobileElement selectVideo;
 
 	@AndroidFindBy(xpath = "//android.widget.FrameLayout[contains(@content-desc,'Video player')]")

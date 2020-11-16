@@ -14,4 +14,7 @@ This project is Cucumber (BDD) project will be used to automate Android applicat
  - set PATH=%ANDROID_HOME%\platform;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools;%ANDROID_HOME%\tools\bin;%ANDROID_HOME%\emulator
 
 ##Appium installation:
-* [node.js](https://nodejs.org/en/) - evented I/O for the backend
+ - [Node.js 6.14.8](https://nodejs.org/en/) - NodeJS installation guid
+ - [Appium 1.18.0](http://appium.io/) - npm install -g appium
+ - [Appium doctor 1.15.4](http://appium.io/) - npm install -g appium-doctor
+ 
